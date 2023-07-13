@@ -26,17 +26,17 @@
         }
     ],
     "require": {
-        "php": ">=5.3.0",
+        "php": ">=8.0.2",
         "ext-soap": "*",
         "ext-curl": "*",
         "besimple/soap-common": "~0.2",
         "ass/xmlsecurity": "~1.0",
-        "renttrack/http-client": "dev-master2"
+        "renttrack/http-client": "dev-upgrade_sf6"
     },
     "require-dev": {
-        "mikey179/vfsStream": "~1.0",
-        "symfony/filesystem": "~2.3",
-        "symfony/process": "~2.3"
+        "mikey179/vfsstream": "~1.0",
+        "symfony/filesystem": "6.*",
+        "symfony/process": "6.*"
     },
     "autoload": {
         "psr-0": { "BeSimple\\SoapClient": "" }
