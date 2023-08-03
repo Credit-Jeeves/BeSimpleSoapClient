@@ -129,7 +129,7 @@ class SoapClient extends \SoapClient
      *
      * @return SoapResponse
      */
-    private function __doHttpRequest(SoapRequest $soapRequest)
+    private function __doHttpRequest(SoapRequest $soapRequest): SoapResponse
     {
         // HTTP headers
         $soapVersion = $soapRequest->getVersion();
@@ -200,7 +200,7 @@ class SoapClient extends \SoapClient
      *
      * @return string
      */
-    public function __doRequest($request, $location, $action, $version, $oneWay = 0)
+    public function __doRequest($request, $location, $action, $version, $oneWay = 0): string
     {
         // wrap request data in SoapRequest object
         $soapRequest = SoapRequest::create($request, $location, $action, $version);
@@ -220,7 +220,7 @@ class SoapClient extends \SoapClient
      *
      * @return SoapResponse
      */
-    protected function __doRequest2(SoapRequest $soapRequest)
+    protected function __doRequest2(SoapRequest $soapRequest): SoapResponse
     {
         // run SoapKernel on SoapRequest
         $this->soapKernel->filterRequest($soapRequest);
@@ -242,7 +242,7 @@ class SoapClient extends \SoapClient
      *
      * @return array
      */
-    protected function filterRequestHeaders(SoapRequest $soapRequest, array $headers)
+    protected function filterRequestHeaders(SoapRequest $soapRequest, array $headers): array
     {
         return $headers;
     }
@@ -254,7 +254,7 @@ class SoapClient extends \SoapClient
      *
      * @return array
      */
-    protected function filterRequestOptions(SoapRequest $soapRequest)
+    protected function filterRequestOptions(SoapRequest $soapRequest): array
     {
         return array();
     }
@@ -264,7 +264,7 @@ class SoapClient extends \SoapClient
      *
      * @return string
      */
-    public function __getLastRequestHeaders()
+    public function __getLastRequestHeaders(): string
     {
         return $this->lastRequestHeaders;
     }
@@ -274,7 +274,7 @@ class SoapClient extends \SoapClient
      *
      * @return string
      */
-    public function __getLastRequest()
+    public function __getLastRequest(): string
     {
         return $this->lastRequest;
     }
@@ -284,7 +284,7 @@ class SoapClient extends \SoapClient
      *
      * @return string
      */
-    public function __getLastResponseHeaders()
+    public function __getLastResponseHeaders(): string
     {
         return $this->lastResponseHeaders;
     }
@@ -294,7 +294,7 @@ class SoapClient extends \SoapClient
      *
      * @return string
      */
-    public function __getLastResponse()
+    public function __getLastResponse(): string
     {
         return $this->lastResponse;
     }
@@ -304,7 +304,7 @@ class SoapClient extends \SoapClient
      *
      * @return \BeSimple\SoapClient\SoapKernel
      */
-    public function getSoapKernel()
+    public function getSoapKernel(): ?SoapKernel
     {
         return $this->soapKernel;
     }
@@ -316,7 +316,7 @@ class SoapClient extends \SoapClient
     *
     * @return void
     */
-    private function configureMime(array &$options)
+    private function configureMime(array &$options): void
     {
         if (isset($options['attachment_type']) && Helper::ATTACHMENTS_TYPE_BASE64 !== $options['attachment_type']) {
             // register mime filter in SoapKernel
@@ -360,7 +360,7 @@ class SoapClient extends \SoapClient
      *
      * @return string
      */
-    protected function loadWsdl($wsdl, array $options)
+    protected function loadWsdl($wsdl, array $options): string
     {
         // option to resolve wsdl/xsd includes
         $resolveRemoteIncludes = true;
