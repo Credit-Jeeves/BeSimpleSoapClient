@@ -31,7 +31,7 @@
         "ext-curl": "*",
         "besimple/soap-common": "~0.2",
         "ass/xmlsecurity": "~1.0",
-        "renttrack/http-client": "dev-upgrade_sf6"
+        "renttrack/http-client": "dev-main"
     },
     "require-dev": {
         "mikey179/vfsstream": "~1.0",
